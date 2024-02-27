@@ -1,0 +1,629 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 背景 */
+.video_backgrand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1000;
+}
+
+.video_backgrand video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* 半透明の黒色 */
+  z-index: -999; /* 動画よりも下に配置 */
+}
+
+/*トップ*/
+.top {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0);
+  /* margin-top: 10px; */
+  /* transition: opacity 1s ease; */
+  z-index: 999;
+}
+
+.transparent {
+  background-color: #ffffff; /* 完全に透明な背景色 */
+}
+
+/* トップの動き */
+.hidden {
+  animation-name: fadeOutAnime;
+  animation-duration: 2.0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutAnime {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+.hyouji{ /*上方向に表示*/
+  animation-name:fadeDownAnime;
+  animation-duration:2.0s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes fadeDownAnime{
+  from {
+  transform: translateY(-100px);
+  }
+
+  to {
+  transform: translateY(0px);
+  }
+}
+
+.logo{
+  margin-right: 130px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.logo img {
+  max-width: 170px;
+}
+
+.page {
+  display: flex;
+  font-size: 15px;
+  margin-right: 50px;
+}
+
+.go_page {
+  margin-right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.page2{
+  display: flex;
+  align-items: center;
+}
+
+.english{
+  font-size: 12px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.page2 img {
+  max-width: 35px;
+}
+
+.search{
+  margin-right: 25px;
+}
+
+.search img{
+  transition: opacity 0.3s ease;
+}
+
+.search img:hover {
+  opacity: 0.5; /* ホバー時の透明度を変更 */
+}
+
+.ask{
+  color: rgb(255, 255, 255);
+  border-radius: 90px;
+  background-color: hsl(220, 10%, 40%);
+  cursor: pointer;
+  padding: 20px 27px;
+  font-size: 15px;
+  font-family: monospace;
+  margin-right: 25px;
+}
+
+/* 見出し */
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:2.0s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+.midashi{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+}
+
+.sub_midashi{
+  color: hsl(220, 10%, 40%);
+  font-family: serif;
+  font-size: 30px;
+}
+
+.main_midashi{
+  font-size: 85px;
+  font-family: Yu Gothic;
+  font-weight: 600;
+  color: rgb(51, 51, 51);
+}
+
+.go_kuwashiku{
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.go_maru{
+  background-color: hsl(220, 10%, 75%);;
+  color: #000000;
+  border-radius: 50%; /*円を作成 */
+  padding: 10px; /* 文字と背景の間隔*/
+  width: 17px; /* 幅 */
+  height: 17px; /* 高 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+.go_kuwashiku_word{
+  font-size: 18px;
+}
+
+/* ピックアップ */
+.pickup{
+  display: flex;
+  justify-content: center;
+  margin-top: 170px;
+}
+
+.p-info{
+  display: flex;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  border-radius: 90px;
+  background-color: #ffffff;
+  padding: 50px 70px;
+  width: 1050px;
+  box-shadow: 40px 40px 15px -10px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.p-date{
+  font-size: 14px;
+}
+
+.p-bun{
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+/* 本文 */
+.main-word{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.main-word-title{
+  font-size: 55px;
+  margin-bottom: 50px;
+  font-family: math;
+}
+
+.main-setumei{
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.setumei1{
+  margin-bottom: 10px;
+}
+
+/* 丸いタグ */
+.maruking{
+  display: flex;
+  justify-content: center;
+  margin-left: 4%;
+}
+
+.marutagu{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 40px;
+  background-color: #ffffff;
+  border: 1px solid rgb(220, 220, 220);
+  width: 29%;
+  box-shadow: 40px 30px 15px -10px rgba(0, 0, 0, 0.06);
+  margin-right: 3%;
+  cursor: pointer;
+}
+
+.maru-t{
+  font-size: 25px;
+  margin-top: 60px;
+  margin-left: 40px;
+  font-family: monospace;
+}
+
+.maru-u{
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.maru-u1{
+  background-color: hsl(220, 10%, 50%);;
+  color: #000000;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: 40px;
+}
+
+.maru-u2{
+  background-color: rgb(88, 163, 88);
+  color: #000000;
+  border-radius: 90px;
+  width: 35px;
+  height: 4px;
+  margin-left: 6px;
+}
+
+.maru-img img{
+  margin-top: 70px;
+  width: 100%;
+  height: auto;
+}
+
+.maru-s{
+  font-size: 18px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 30px;
+  line-height: 2;
+}
+
+.go_maru1{
+  background-color: hsl(220, 10%, 75%);;
+  color: #000000;
+  border-radius: 50%; /*円を作成 */
+  padding: 10px; /* 文字と背景の間隔*/
+  width: 17px; /* 幅 */
+  height: 17px; /* 高 */
+  margin-left: 80%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 情報へ飛ぶ黒いボタン */
+
+.go-some{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 90px;
+  font-family: monospace;
+}
+
+.go-service1{
+  border-radius: 90px;
+  background-color: rgb(92, 99, 112);;
+  cursor: pointer;
+  padding: 30px 55px;
+  font-size: 18px;
+}
+
+.go-service2{
+  border-radius: 90px;
+  background-color: hsl(220, 10%, 40%);;
+  cursor: pointer;
+  padding: 30px 55px;
+  font-size: 18px;
+  margin-left: 3%;
+}
+
+/* 黒い背景のやつら */
+.b-black{
+  background-color: hsl(220, 10%, 20%);;
+  color: #ffffff;
+  font-family: monospace;
+  border-radius: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+}
+
+.b-moji{
+  margin-left: 5%;
+}
+
+.b-pick {
+  font-size: 23px;
+  padding-top: 60px;
+}
+
+.b-maru{
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.b-maru1{
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  color: #000000;
+  border-radius: 90px;
+  width: 20px;
+  height: 3px;
+  /* margin-left: 6px; */
+  z-index: 2;
+}
+
+.b-maru2{
+  position: absolute;
+  background-color: rgb(88, 163, 88);
+  color: #000000;
+  border-radius: 90px;
+  width: 35px;
+  height: 3px;
+  z-index: 1;
+}
+
+.b-cont{
+  display: flex;
+  align-items: center;
+  padding-bottom: 130px;
+}
+
+.b-pic img{
+  width: 350px; /*a*/
+  height: auto;
+  border-radius: 20px;
+}
+
+.b-hon{
+  display: flex;
+  padding-left: 30px;
+}
+
+.b-main{
+  cursor: pointer;
+}
+
+.b-main-title{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.b-main-bun{
+  font-size: 13px;
+  width: 700px; /*a*/
+  line-height: 2;
+}
+
+.b_maru{
+  background-color: hsl(220, 10%, 50%);;
+  color: #ffffff;
+  border-radius: 50%; /*円を作成 */
+  padding: 10px; /* 文字と背景の間隔*/
+  width: 17px; /* 幅 */
+  height: 17px; /* 高 */
+  font-size: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.b-bou{
+  border-bottom: 1px solid rgb(184, 184, 184); /* 黒色の下線を追加 */
+  padding-bottom: 40px; /* 下側の余白を追加 */
+  margin-bottom: 20px; /* 下側のマージンを追加 */
+}
+
+.go-sol{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 170px;
+  font-family: monospace;
+}
+
+.go-insol{
+  color: #ffffff;
+  border-radius: 90px;
+  background-color: hsl(220, 10%, 40%);;
+  cursor: pointer;
+  padding: 30px 55px;
+  font-size: 18px;
+}
+
+/* 最後の電話とか */
+
+.final{
+  background-color: hsl(220, 10%, 20%);;
+  margin-top: 100px;
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+}
+
+.fi-title{
+  font-size: 55px;
+  padding-top: 100px;
+  font-family: math;
+
+}
+
+.fi-bun{
+  padding: 50px;
+}
+
+.fi-ask{
+  display: flex;
+  justify-content: center;
+}
+
+.fi-ask-moji{
+  background-color: hsl(0, 61%, 46%);
+  border-radius: 90px;
+  padding: 50px 100px;
+  font-family: monospace;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.fi-dire{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 60px;
+}
+
+.fi-number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-family: system-ui;
+  cursor: pointer;
+}
+
+.fi-number img{
+  height: 80px;
+  width: auto;
+}
+
+.fi-days{
+  margin-left: 40px;
+}
+
+/* 最後の一発 */
+
+.gray{
+  display: flex;
+  background-color:hsl(220, 10%, 40%);;
+  color: #ffffff;
+  padding: 50px 80px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.gray-con{
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+/* 名前とか */
+
+.last-w{
+  padding: 40px 100px;
+  font-size: 12px;
+}
+
+/* ニュース */
+.news{
+  display: flex;
+  justify-content: center;
+}
+
+.news-semi{
+  /* margin-left: 80px; */
+  margin-right: 30px;
+  width: 40%;
+}
+
+.news-bro{
+  margin-left: 30px;
+  /* margin-right: 80px; */
+  width: 40%;
+}
+
+.semi-title{
+  display: flex;
+  justify-content: center;
+  font-size: 55px;
+  margin-bottom: 50px;
+  font-family: math;
+}
+
+.semi-c{
+  border-bottom: 1px solid rgb(231, 231, 231); /* 黒色の下線を追加 */
+  padding-bottom: 35px; /* 下側の余白を追加 */
+  margin-bottom: 35px; /* 下側のマージンを追加 */
+  cursor: pointer;
+}
+
+.semi-day{
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.semi-bun{
+  line-height: 2;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.semi-go{
+  font-family: monospace;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+/* フォントの変更 */
+.moji{
+  font-family: serif;
+}
